@@ -22,6 +22,7 @@ pub struct Bitcoin;
 pub struct TestNet3;
 pub struct Namecoin;
 pub struct Litecoin;
+pub struct Mazacoin;
 pub struct Dogecoin;
 pub struct Myriadcoin;
 pub struct Unobtanium;
@@ -58,6 +59,13 @@ impl Coin for Litecoin {
     fn version_id(&self)  -> u8  { 0x30 }
     fn genesis(&self)     -> [u8; 32] { hex_to_arr32_swapped("12a765e31ffd4059bada1e25190f6e98c99d9714d334efa41a195a7e7e04bfe2") }
     fn default_folder(&self) -> PathBuf { Path::new(".litecoin").join("blocks") }
+}
+impl Coin for Mazacoin {
+    fn name(&self)        -> String { String::from("Mazacoin") }
+    fn magic(&self)       -> u32 { 0xdf03b5f8 }
+    fn version_id(&self)  -> u8  { 0x32 }
+    fn genesis(&self)     -> [u8; 32] { hex_to_arr32_swapped("00000c7c73d8ce604178dae13f0fc6ec0be3275614366d44b1b4b5c6e238c60c") }
+    fn default_folder(&self) -> PathBuf { Path::new(".mazacoin").join("blocks") }
 }
 
 impl Coin for Dogecoin {
@@ -129,6 +137,7 @@ impl FromStr for CoinType {
             "testnet3"      => Ok(CoinType::from(TestNet3)),
             "namecoin"      => Ok(CoinType::from(Namecoin)),
             "litecoin"      => Ok(CoinType::from(Litecoin)),
+            "mazacoin"      => Ok(CoinType::from(Mazacoin)),
             "dogecoin"      => Ok(CoinType::from(Dogecoin)),
             "myriadcoin"    => Ok(CoinType::from(Myriadcoin)),
             "unobtanium"    => Ok(CoinType::from(Unobtanium)),

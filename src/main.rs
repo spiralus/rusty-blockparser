@@ -181,6 +181,7 @@ fn parse_args() -> OpResult<ParserOptions> {
                   "testnet3",
                   "namecoin",
                   "litecoin",
+                  "mazacoin",
                   "dogecoin",
                   "myriadcoin",
                   "unobtanium"];

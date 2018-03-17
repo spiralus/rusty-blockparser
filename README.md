@@ -8,7 +8,7 @@ It allows extraction of various data types (blocks, transactions, scripts, publi
 
 ##### **Currently Supported Blockchains:**
 
- `Bitcoin`, `Namecoin`, `Litecoin`, `Dogecoin`, `Myriadcoin` and `Unobtanium`.
+ `Bitcoin`, `Namecoin`, `Litecoin`, `Mazacoin`, `Dogecoin`, `Myriadcoin` and `Unobtanium`.
 
 The parser is implemented with a thread pool pattern to ensure maximum performance.
 It assumes a local copy of the blockchain, typically downloaded by Bitcoin core. If you are not sure whether your local copy is valid you can apply `--verify-merkle-root true` to validate the merkle tree. If something doesn't match the parser prints it as warning.
@@ -194,7 +194,7 @@ OPTIONS:
         --backlog <COUNT>                    Sets maximum worker backlog (default: 100)
     -d, --blockchain-dir <blockchain-dir>    Sets blockchain directory which contains blk.dat files (default: ~/.bitcoin/blocks)
         --chain-storage <FILE>               Specify path to chain storage. This is just a internal state file (default: chain.json)
-    -c, --coin <NAME>                        Specify blockchain coin (default: bitcoin) [values: bitcoin, testnet3, namecoin, litecoin, dogecoin, myriadcoin,
+    -c, --coin <NAME>                        Specify blockchain coin (default: bitcoin) [values: bitcoin, testnet3, namecoin, litecoin, mazacoin, dogecoin, myriadcoin,
                                              unobtanium]
     -t, --threads <COUNT>                    Thread count (default: 2)
 
